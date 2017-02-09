@@ -12047,6 +12047,44 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<span class="n">samples_bar</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">])</span>
+<span class="n">samples_bar</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">indices</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">samples_bar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-111-d950002b9c9a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-intense-fg ansi-bold">import</span> seaborn <span class="ansi-green-intense-fg ansi-bold">as</span> sns
+<span class="ansi-green-intense-fg ansi-bold">      2</span> samples_bar <span class="ansi-yellow-intense-fg ansi-bold">=</span> samples<span class="ansi-yellow-intense-fg ansi-bold">.</span>append<span class="ansi-yellow-intense-fg ansi-bold">(</span>data<span class="ansi-yellow-intense-fg ansi-bold">.</span>describe<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>loc<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;mean&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> samples_bar<span class="ansi-yellow-intense-fg ansi-bold">.</span>index <span class="ansi-yellow-intense-fg ansi-bold">=</span> indices <span class="ansi-yellow-intense-fg ansi-bold">+</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;mean&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> _ <span class="ansi-yellow-intense-fg ansi-bold">=</span> samples_bar<span class="ansi-yellow-intense-fg ansi-bold">.</span>plot<span class="ansi-yellow-intense-fg ansi-bold">(</span>kind<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">&#39;bar&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> figsize<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">14</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-cyan-intense-fg ansi-bold">6</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-fg">ImportError</span>: No module named seaborn</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12068,8 +12106,8 @@ div#notebook {
 <p>I would describe a sample with more spending on Grocery, Milk, Detergents and Delicatessen as retailers or markets. While a sample with more spending on Fresh and frozen as restaurant.</p>
 <p>So looking above I would calssify:</p>
 <p>Sample point 0 as reatiler as it has higher spending on Grocery, Milk and Detergents and these values are higher than the mean values of the respective features.</p>
-<p>Sample point 1 as restaurant as it has higher spending on Fresh and Frozen.</p>
-<p>Sample point 2 as restaurant as it has higher spending on Fresh. This suggests that food is predominantly freshly made, so is likely to be a restaurant.</p>
+<p>Sample point 1 as restaurant as it has higher spending on Fresh and Frozen and these values are higher than the mean values of the respective features.</p>
+<p>Sample point 2 as restaurant as it has higher spending on Fresh and this value is almost equal to the 75th percentile of this feature. This suggests that food is predominantly freshly made, so is likely to be a restaurant.</p>
 
 </div>
 </div>
@@ -14828,7 +14866,7 @@ MzMzMzMzs7b8P6YbhZeIVDkmAAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p>Grocery and detergents_paper has the highest correlation. The data of this pair follows y=mx+c relationship. Also, Milk and Grocery, Milk and detergents_paper seem to have some degree of correlation. The feature which I selected was Frozen and from the above scatter plot we can see that it does not have correlation with any other feature and thus it's a strongly relevant feature.</p>
-<p>The distribution for the points seem highly skewed towards the origin and has few number of outliers.</p>
+<p>The distributions for all the features appear to be skewed right in positive direction. All the categories have a great deal of data close to 0 with respect to some of the higher data points and can be considered as outliers.</p>
 
 </div>
 </div>
@@ -14860,7 +14898,7 @@ MzMzMzMzs7b8P6YbhZeIVDkmAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Scale the data using the natural logarithm</span>
@@ -25223,7 +25261,8 @@ Sample point 2 predicted to be in Cluster 1
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>We have two customer segments here, restaurants(segment 0) and retailers(segment 1). If a distributor is considering changing his delivery service to 3 days a week I think people of segment 1 will react positively while people of segment 0 wouldn't. Because restaurants would lie to have fresh food each day, so if the delivery changes to 3 days a week they might not serve fresh food and thus would react negatively. While on the other hand people of segment 1 buy more wide variety of perishable and preservable goods and do not necessarilly need a daily delivery.Thus will react positively..</p>
+<p>We have two customer segments here, restaurants(segment 0) and retailers(segment 1). If a distributor is considering changing his delivery service to 3 days a week I think people of segment 1 will react positively while people of segment 0 wouldn't. Because restaurants would lie to have fresh food each day, so if the delivery changes to 3 days a week they might not serve fresh food and thus would react negatively. While on the other hand people of segment 1 buy more wide variety of perishable and preservable goods and do not necessarilly need a daily delivery.Thus will react positively.</p>
+<p>We can also conduct A/B testing of both groups by selecting a sample of customers from each cluster and using the remainder of their cluster as the control group. We could apply the new 3 day schedule to just the sample for each cluster, and measure how their reported service satsifaction changes with respect to their control groups. From this we can determine which group reacted positively or negatively. If we see that the control group is more positive than we implement the change.</p>
 
 </div>
 </div>
